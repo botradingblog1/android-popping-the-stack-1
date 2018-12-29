@@ -1,15 +1,13 @@
-package com.justmobiledev.androidpoppingstack1;
+package com.justmobiledev.androidpoppingstack1.task2;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v4.content.LocalBroadcastManager;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 
-public class ActivityB extends BaseActivity {
+import com.justmobiledev.androidpoppingstack1.BaseActivity;
+import com.justmobiledev.androidpoppingstack1.R;
+
+public class ActivityBTask2 extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,8 +21,7 @@ public class ActivityB extends BaseActivity {
 
     private void startNextActivity(){
 
-        Intent activity = new Intent(ActivityB.this, ActivityC.class);
+        Intent activity = new Intent(ActivityBTask2.this, ActivityCTask2.class);
         startActivity(activity);
-
     }
 }

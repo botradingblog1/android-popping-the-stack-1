@@ -1,27 +1,20 @@
-package com.justmobiledev.androidpoppingstack1;
+package com.justmobiledev.androidpoppingstack1.task2;
 
 import android.app.ActivityManager;
-import android.content.BroadcastReceiver;
-import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v4.content.LocalBroadcastManager;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.justmobiledev.androidpoppingstack1.broadcast_receivers.PopStackReceiver;
-import com.justmobiledev.androidpoppingstack1.constants.Constants;
+import com.justmobiledev.androidpoppingstack1.BaseActivity;
+import com.justmobiledev.androidpoppingstack1.MainActivity;
+import com.justmobiledev.androidpoppingstack1.R;
 
 import java.util.List;
 
-public class ActivityC extends BaseActivity {
+public class ActivityCTask2 extends BaseActivity {
     TextView taskInfoTextView;
 
     @Override
@@ -36,7 +29,9 @@ public class ActivityC extends BaseActivity {
         Button clearTopButton = findViewById(R.id.button_clear_top);
         clearTopButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent intent = new Intent(ActivityC.this, MainActivity.class);
+                popStackFlag = true;
+
+                Intent intent = new Intent(ActivityCTask2.this, ActivityATask2.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
 

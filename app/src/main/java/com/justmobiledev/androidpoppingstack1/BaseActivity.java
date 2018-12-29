@@ -6,12 +6,4 @@ public class BaseActivity extends AppCompatActivity {
 
     public static boolean popStackFlag = false;
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-
-        if (popStackFlag){
-            finish();
-        }
-    }
 }

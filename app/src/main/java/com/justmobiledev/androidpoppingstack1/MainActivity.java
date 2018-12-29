@@ -8,7 +8,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 
-import com.justmobiledev.androidpoppingstack1.new_task.ActivityASingleTask;
+import com.justmobiledev.androidpoppingstack1.task2.ActivityATask2;
 
 public class MainActivity extends BaseActivity {
 
@@ -30,21 +30,18 @@ public class MainActivity extends BaseActivity {
             public void onClick(View v) {
                 Intent activityA = new Intent(MainActivity.this, ActivityA.class);
                 startActivity(activityA);
-
-               /*  Intent activityB = new Intent(MainActivity.this, ActivityB.class);
-                startActivity(activityB);
-
-                Intent activityC = new Intent(MainActivity.this, ActivityC.class);
-                startActivity(activityC);*/
             }
         });
 
         twoTaskStackButton = findViewById(R.id.button_two_task_stack);
         twoTaskStackButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent activity = new Intent(MainActivity.this, ActivityASingleTask.class);
+                Intent activity = new Intent(MainActivity.this, ActivityATask2.class);
                 activity.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK  | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(activity);
+
+                // finish this activity to prevent back button pressed
+                finish();
             }
         });
     }

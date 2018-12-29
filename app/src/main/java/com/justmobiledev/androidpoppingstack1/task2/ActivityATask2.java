@@ -1,4 +1,4 @@
-package com.justmobiledev.androidpoppingstack1.new_task;
+package com.justmobiledev.androidpoppingstack1.task2;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,7 +8,7 @@ import com.justmobiledev.androidpoppingstack1.ActivityB;
 import com.justmobiledev.androidpoppingstack1.BaseActivity;
 import com.justmobiledev.androidpoppingstack1.R;
 
-public class ActivityASingleTask extends BaseActivity {
+public class ActivityATask2 extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -16,15 +16,17 @@ public class ActivityASingleTask extends BaseActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        startNextActivity();
+        if (!popStackFlag) {
+            startNextActivity();
+        }
+
+        popStackFlag = false;
     }
 
     private void startNextActivity(){
 
-        Intent activity = new Intent(ActivityASingleTask.this, ActivityB.class);
-        activity.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK  | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        Intent activity = new Intent(ActivityATask2.this, ActivityBTask2.class);
         startActivity(activity);
-
 
     }
 }
