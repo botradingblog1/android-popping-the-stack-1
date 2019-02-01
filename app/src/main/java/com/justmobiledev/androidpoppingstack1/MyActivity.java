@@ -15,7 +15,7 @@ import java.util.List;
 
 public class MyActivity extends BaseActivity {
 
-    TextView taskInfoTextView;
+    TextView taskInfoTextView, textViewActivityId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,15 +25,19 @@ public class MyActivity extends BaseActivity {
         setSupportActionBar(toolbar);
 
         taskInfoTextView = findViewById(R.id.textview_task_info);
+        textViewActivityId = findViewById(R.id.textview_activity_id);
 
         // Get info from intent
         Intent intent = getIntent();
         int numActivities = intent.getIntExtra(Constants.KEY_ACTIVITY_INDEX, 0);
 
-        String activityName = "Activity "+numActivities;
-        setTitle(activityName);
+        String activityId = "Activity "+numActivities;
+        setTitle(activityId);
 
-        // Start new Activity
+        textViewActivityId.setText(activityId);
+
+        // Start the next Activity
+        numActivities -= numActivities;
         if (numActivities > 0){
             Intent nextIntent = new Intent(this, MyActivity.class);
             nextIntent.putExtra(Constants.KEY_ACTIVITY_INDEX, numActivities);
@@ -47,8 +51,7 @@ public class MyActivity extends BaseActivity {
             public void onClick(View v) {
                 popStackFlag = true;
 
-                Intent intent = new Intent(MyActivity.this, MyActivity.class);
-                intent.putExtra(Constants.KEY_ACTIVITY_INDEX, 0);
+                Intent intent = new Intent(MyActivity.this, MainActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
 
