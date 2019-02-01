@@ -2,7 +2,6 @@
 ## Overview
 
 The purpose of the app is to let the developer experiment with one and multiple task stacks and understand how to pop activities off the stacks again.
-You can see which intent flags are used to create new tasks and to be able to pop the stacks.
 
 ## Supporting material
 Check out my [blog post](http://justmobiledev.com/popping-the-stack-in-android/) on popping the stack for a detailed explanation.
