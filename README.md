@@ -1,16 +1,14 @@
 # App for experimenting with Tasks and Activities in Android (Java)
 ## Overview
-The purpose or this project is to show how preferences can be stored securely in your app.
-For example, sometimes it is necessary to store sensitive user information persistently in your app (e.g. a user's DOB or ddress).
-The default Android SharedPreferences are safed in a plain text XML file in the app's internal storage, so not a good place to store sensitive information.
 
-This project shows you how to create a wrapper around the standard SharedPreferences class that encrypts both preference keys and values with a strong encryption algorithm.
-This project uses the the Android Keystore system and crypto algorithms from the java.security library.
+The app let's the user create a stack with one or two tasks and then pop back to the root Activity.
+
+
 
 ## Supporting material
-Check out my [blog post on storing preferences securely](http://justmobiledev.com/storing-preferences-securely-on-android/), for a detailed explanation.
+Check out my [blog post](http://justmobiledev.com/popping-the-stack-in-android/) on popping the stack for a detailed explanation.
 
-The Android documentation on [the Android Keystore System](https://developer.android.com/training/articles/keystore) is a good read to better understand the project.
+The Android documentation on [Tasks and Activities](https://developer.android.com/guide/components/activities/tasks-and-back-stack) is a good read to better understand the project.
 
 ## Implementation
 * The SecurePrefsBuilder is a builder class used to specify properties for your shared preferences, e.g. file name, or if keys should be encrypted.
@@ -34,3 +32,5 @@ You can right-click on the file and 'Save As' to a temp directory on your comput
 
 ## Screenshots
 ![Popping the stack](screenshots/android-popping-the-stack-1.png?raw=true "Popping the stack")
+
+![Popping the stack](screenshots/android-popping-the-stack-2.png?raw=true "Popping the stack")
