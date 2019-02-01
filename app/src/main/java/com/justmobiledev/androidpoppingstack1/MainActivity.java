@@ -25,6 +25,7 @@ public class MainActivity extends BaseActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        // Uses the current task
         oneTaskStackButton = findViewById(R.id.button_one_task_stack);
         oneTaskStackButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -34,6 +35,7 @@ public class MainActivity extends BaseActivity {
             }
         });
 
+        // Creates a new task
         twoTaskStackButton = findViewById(R.id.button_two_task_stack);
         twoTaskStackButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {

@@ -24,16 +24,14 @@ public class MyActivity extends BaseActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        taskInfoTextView = (TextView) findViewById(R.id.textview_task_info);
+        taskInfoTextView = findViewById(R.id.textview_task_info);
 
         // Get info from intent
         Intent intent = getIntent();
-        String id = intent.getStringExtra(Constants.KEY_ACTIVITY_INDEX);
+        int numActivities = intent.getIntExtra(Constants.KEY_ACTIVITY_INDEX, 0);
 
-        int numActivities = intent.getIntExtra(Constants.KEY_NUM_ACTIVITIES_TO_CREATE, 0);
-        String activityName = "Activity "+id;
+        String activityName = "Activity "+numActivities;
         setTitle(activityName);
-        numActivities--;
 
         // Start new Activity
         if (numActivities > 0){
@@ -50,6 +48,7 @@ public class MyActivity extends BaseActivity {
                 popStackFlag = true;
 
                 Intent intent = new Intent(MyActivity.this, MyActivity.class);
+                intent.putExtra(Constants.KEY_ACTIVITY_INDEX, 0);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
 
