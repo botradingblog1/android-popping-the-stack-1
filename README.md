@@ -9,7 +9,7 @@ Check out my [blog post](http://justmobiledev.com/popping-the-stack-in-android/)
 The Android documentation on [Tasks and Activities](https://developer.android.com/guide/components/activities/tasks-and-back-stack) is a good read to better understand the project.
 
 ## Implementation
-* In order to create the one task stack, we simply start a new Intent with MyActivity
+* In order to create the one task stack, we simply start MyActivity
 * In order to create a new task, we need to set the taskAffinity in the AndroidManifest.xml for an activity in a different package: task2/MyActivityTask2.
 * In addition, we set the FLAG_ACTIVITY_NEW_TASK flag in the intent to start task2/MyActivity2
 * To pop the stack and clear all activities, we start the MainActivity using the FLAG_ACTIVITY_CLEAR_TOP flag.
