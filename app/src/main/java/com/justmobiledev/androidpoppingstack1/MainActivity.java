@@ -8,7 +8,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 
-import com.justmobiledev.androidpoppingstack1.task2.ActivityATask2;
+import com.justmobiledev.androidpoppingstack1.task2.MyActivityTask2;
 
 public class MainActivity extends BaseActivity {
 
@@ -40,11 +40,11 @@ public class MainActivity extends BaseActivity {
         twoTaskStackButton = findViewById(R.id.button_two_task_stack);
         twoTaskStackButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent activity = new Intent(MainActivity.this, MyActivity.class);
-                activity.putExtra(Constants.KEY_ACTIVITY_INDEX, 3);
-                activity.putExtra(Constants.KEY_TASK_INDEX, 3);
-                activity.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK  | Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(activity);
+                Intent intent = new Intent(MainActivity.this, MyActivityTask2.class);
+                intent.putExtra(Constants.KEY_ACTIVITY_INDEX, 3);
+                intent.putExtra(Constants.KEY_TASK_INDEX, 2);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK  | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
 
                 // finish this activity to prevent back button pressed
                 finish();

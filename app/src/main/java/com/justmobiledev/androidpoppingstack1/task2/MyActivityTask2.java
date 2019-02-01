@@ -1,4 +1,4 @@
-package com.justmobiledev.androidpoppingstack1;
+package com.justmobiledev.androidpoppingstack1.task2;
 
 import android.app.ActivityManager;
 import android.content.Intent;
@@ -8,12 +8,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.justmobiledev.androidpoppingstack1.task2.ActivityATask2;
-import com.justmobiledev.androidpoppingstack1.task2.ActivityCTask2;
+import com.justmobiledev.androidpoppingstack1.BaseActivity;
+import com.justmobiledev.androidpoppingstack1.Constants;
+import com.justmobiledev.androidpoppingstack1.MainActivity;
+import com.justmobiledev.androidpoppingstack1.R;
 
 import java.util.List;
 
-public class MyActivity extends BaseActivity {
+public class MyActivityTask2 extends BaseActivity {
 
     TextView taskInfoTextView, textViewActivityId;
 
@@ -39,7 +41,7 @@ public class MyActivity extends BaseActivity {
         // Start  next Activity
         activityIndex = --activityIndex;
         if (activityIndex > 0){
-            Intent nextIntent = new Intent(this, MyActivity.class);
+            Intent nextIntent = new Intent(this, MyActivityTask2.class);
             nextIntent.putExtra(Constants.KEY_ACTIVITY_INDEX, activityIndex);
             nextIntent.putExtra(Constants.KEY_TASK_INDEX, taskIndex);
             nextIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -52,7 +54,7 @@ public class MyActivity extends BaseActivity {
             public void onClick(View v) {
                 popStackFlag = true;
 
-                Intent intent = new Intent(MyActivity.this, MainActivity.class);
+                Intent intent = new Intent(MyActivityTask2.this, MainActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
 

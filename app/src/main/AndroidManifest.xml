@@ -53,8 +53,12 @@
             android:theme="@style/AppTheme.NoActionBar" />
 
         <activity
-            android:name=".MyActivity"
+            android:name=".task2.MyActivityTask2"
             android:taskAffinity="com.justmobiledev.androidpoppingstack1.task2"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".MyActivity"
+            android:taskAffinity="com.justmobiledev.androidpoppingstack1"
             android:theme="@style/AppTheme.NoActionBar" />
     </application>
 </manifest>
