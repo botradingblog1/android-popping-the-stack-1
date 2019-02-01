@@ -51,5 +51,10 @@
             android:taskAffinity="com.justmobiledev.androidpoppingstack1.task2"
             android:label="@string/title_activity_c_task2"
             android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".MyActivity"
+            android:taskAffinity="com.justmobiledev.androidpoppingstack1.task2"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 </manifest>
