@@ -18,7 +18,6 @@ The Android documentation on [Tasks and Activities](https://developer.android.co
 1. When the app is started, you can select either the 'One Task' or the 'Two Task' button
 2. Press the 'One Task' button to add activities to the first task stack. Note that the MainActivity is on the bottom of the stack, the MyActivity is on the top. When you look at the 'Recent Task' list, you only see one task. Use the 'Clear Top' button to pop the stack.
 3. Press the 'Two Task' button to create a new task stack. Note that the MyActivityTask2 is on the bottom of the task stack, MyActivityTask2 is on the top. When you look at the 'Recent Task' list, you see two tasks: The first task is the MainActivity, the second task has the MyActivityTask2 activities. Use the 'Clear Top' button to pop the stack.
-3. The app fetches the preferences again, decrypts the value and displays them in the second text field.
 
 ## Screenshots
 ![Popping the stack](screenshots/android-popping-the-stack-1.png?raw=true "Popping the stack")
