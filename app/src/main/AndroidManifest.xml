@@ -22,35 +22,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".ActivityA"
-            android:label="@string/title_activity_a"
-            android:theme="@style/AppTheme.NoActionBar" >
-        </activity>
-        <activity
-            android:name=".ActivityB"
-            android:label="@string/title_activity_b"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".ActivityC"
-            android:label="@string/title_activity_c"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".task2.ActivityATask2"
-            android:taskAffinity="com.justmobiledev.androidpoppingstack1.task2"
-            android:label="@string/title_activity_a_task2"
-            android:theme="@style/AppTheme.NoActionBar" >
-        </activity>
-        <activity
-            android:name=".task2.ActivityBTask2"
-            android:taskAffinity="com.justmobiledev.androidpoppingstack1.task2"
-            android:label="@string/title_activity_b_task2"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".task2.ActivityCTask2"
-            android:taskAffinity="com.justmobiledev.androidpoppingstack1.task2"
-            android:label="@string/title_activity_c_task2"
-            android:theme="@style/AppTheme.NoActionBar" />
 
         <activity
             android:name=".task2.MyActivityTask2"

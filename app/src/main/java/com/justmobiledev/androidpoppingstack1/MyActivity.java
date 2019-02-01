@@ -8,9 +8,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.justmobiledev.androidpoppingstack1.task2.ActivityATask2;
-import com.justmobiledev.androidpoppingstack1.task2.ActivityCTask2;
-
 import java.util.List;
 
 public class MyActivity extends BaseActivity {
