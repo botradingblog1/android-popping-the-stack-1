@@ -1,9 +1,8 @@
-# App for experimenting with Tasks and Activities in Android (Java)
+# Appp playground for with Tasks Stacks in Android (Java)
 ## Overview
 
-The app let's the user create a stack with one or two tasks and then pop back to the root Activity.
-
-
+The app let's the user create a stack with one or two task stacks and then pop back to the root Activity.
+You can see which intent flags are used to create new tasks and to be able to pop the stacks.
 
 ## Supporting material
 Check out my [blog post](http://justmobiledev.com/popping-the-stack-in-android/) on popping the stack for a detailed explanation.
@@ -11,23 +10,15 @@ Check out my [blog post](http://justmobiledev.com/popping-the-stack-in-android/)
 The Android documentation on [Tasks and Activities](https://developer.android.com/guide/components/activities/tasks-and-back-stack) is a good read to better understand the project.
 
 ## Implementation
-* The SecurePrefsBuilder is a builder class used to specify properties for your shared preferences, e.g. file name, or if keys should be encrypted.
-* The wrapper around the standard SharedPreferences is implemented in the SecurePrefs class.
-* The project uses the Android KeyGenerator to create an AES-256 encryption key, which is safely stored in the Keystore.
-* When you set values, the key and the value is encrypted in the SharedPrefs class with the encryption key retrieved from the Keystore before they are stored in the shared preferences XML file.
-* When you get values, they key is encrypted to look up the value, the value is decrypted from the shared preferences XML file. For both actions the encryption key is retrieved from the Keystore.
-* To see how your key and value are stored, open the 'Device Explorer' from the right Android Studio tab, and go to data\data\com.mobile.justmobiledev.androidsecurepreferences1\shared_prefs\my_secure_prefs_file.xml.
-You can right-click on the file and 'Save As' to a temp directory on your computer. The file content should show the encrypted key and value, e.g.
-
-```xml
-<map>
-    <string name="atgF69t3sjhUZwJosmIRZSfgXLQhg21FxbrJ534ATXo=&#10;">pXJ7qfFftbUlMozjOidT6EBXwX4l5go2XE3mo/DVrxw=&#10;    </string>
-</map>
-```
+* In order to create the one task stack, we simply start a new Intent with MyActivity
+* In order to create a new task, we need to set the taskAffinity in the AndroidManifest.xml for an activity in a different package: task2/MyActivityTask2.
+* In addition, we set the FLAG_ACTIVITY_NEW_TASK flag in the intent to start the task2/MyActivity2
+* To pop the stack and clear all activities, we start the MainActivity using the FLAG_ACTIVITY_CLEAR_TOP flag.
 
 ## Usage
-1. When the app is started, you can enter a preference value into the first field.
-2. Press the 'Start' button to encrypt key and value and store them into the preferences xml file
+1. When the app is started, you can select either the 'One Task' or the 'Two Task' button
+2. Press the 'One Task' button to add activities to the first task stack. Note that the MainActivity is on the bottom of the stack, the MyActivity is on the top. When you look at the 'Recent Task' list, you only see one task. Use the 'Clear Top' button to pop the stack.
+3. Press the 'Two Task' button to create a new task stack. Note that the MyActivityTask2 is on the bottom of the task stack, MyActivityTask2 is on the top. When you look at the 'Recent Task' list, you see two tasks: The first task is the MainActivity, the second task has the MyActivityTask2 activities. Use the 'Clear Top' button to pop the stack.
 3. The app fetches the preferences again, decrypts the value and displays them in the second text field.
 
 ## Screenshots
