@@ -1,7 +1,7 @@
-# Appp playground for with Tasks Stacks in Android (Java)
+# App playground for with Tasks Stacks in Android (Java)
 ## Overview
 
-The app let's the user create a stack with one or two task stacks and then pop back to the root Activity.
+The purpose of the app is to let the developer experiment with one and multiple task stacks and understand how to pop activities off the stacks again.
 You can see which intent flags are used to create new tasks and to be able to pop the stacks.
 
 ## Supporting material
@@ -12,7 +12,7 @@ The Android documentation on [Tasks and Activities](https://developer.android.co
 ## Implementation
 * In order to create the one task stack, we simply start a new Intent with MyActivity
 * In order to create a new task, we need to set the taskAffinity in the AndroidManifest.xml for an activity in a different package: task2/MyActivityTask2.
-* In addition, we set the FLAG_ACTIVITY_NEW_TASK flag in the intent to start the task2/MyActivity2
+* In addition, we set the FLAG_ACTIVITY_NEW_TASK flag in the intent to start task2/MyActivity2
 * To pop the stack and clear all activities, we start the MainActivity using the FLAG_ACTIVITY_CLEAR_TOP flag.
 
 ## Usage
