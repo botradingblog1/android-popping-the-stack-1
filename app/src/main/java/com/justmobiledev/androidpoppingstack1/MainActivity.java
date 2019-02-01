@@ -28,7 +28,7 @@ public class MainActivity extends BaseActivity {
         oneTaskStackButton = findViewById(R.id.button_one_task_stack);
         oneTaskStackButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent activityA = new Intent(MainActivity.this, ActivityA.class);
+                Intent activityA = new Intent(MainActivity.this, MyActivity.class);
                 startActivity(activityA);
             }
         });
