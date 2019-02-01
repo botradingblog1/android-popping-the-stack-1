@@ -29,18 +29,20 @@ public class MyActivity extends BaseActivity {
 
         // Get info from intent
         Intent intent = getIntent();
-        int numActivities = intent.getIntExtra(Constants.KEY_ACTIVITY_INDEX, 0);
+        int activityIndex = intent.getIntExtra(Constants.KEY_ACTIVITY_INDEX, 0);
+        int taskIndex = intent.getIntExtra(Constants.KEY_TASK_INDEX, 0);
+        String activityName = "Activity "+activityIndex+", Task "+taskIndex;
+        setTitle(activityName);
 
-        String activityId = "Activity "+numActivities;
-        setTitle(activityId);
-
-        textViewActivityId.setText(activityId);
+        textViewActivityId.setText(activityName);
 
         // Start the next Activity
-        numActivities -= numActivities;
-        if (numActivities > 0){
+        activityIndex -= activityIndex;
+        taskIndex -= taskIndex;
+        if (activityIndex > 0){
             Intent nextIntent = new Intent(this, MyActivity.class);
-            nextIntent.putExtra(Constants.KEY_ACTIVITY_INDEX, numActivities);
+            nextIntent.putExtra(Constants.KEY_ACTIVITY_INDEX, activityIndex);
+            nextIntent.putExtra(Constants.KEY_TASK_INDEX, taskIndex);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
         }

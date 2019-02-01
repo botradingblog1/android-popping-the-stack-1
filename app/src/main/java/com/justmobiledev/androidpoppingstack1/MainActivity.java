@@ -31,6 +31,7 @@ public class MainActivity extends BaseActivity {
             public void onClick(View v) {
                 Intent activity = new Intent(MainActivity.this, MyActivity.class);
                 activity.putExtra(Constants.KEY_ACTIVITY_INDEX, 3);
+                activity.putExtra(Constants.KEY_TASK_INDEX, 1);
                 startActivity(activity);
             }
         });
@@ -39,8 +40,9 @@ public class MainActivity extends BaseActivity {
         twoTaskStackButton = findViewById(R.id.button_two_task_stack);
         twoTaskStackButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent activity = new Intent(MainActivity.this, ActivityATask2.class);
+                Intent activity = new Intent(MainActivity.this, MyActivity.class);
                 activity.putExtra(Constants.KEY_ACTIVITY_INDEX, 3);
+                activity.putExtra(Constants.KEY_TASK_INDEX, 3);
                 activity.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK  | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(activity);
 
